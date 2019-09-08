@@ -32,7 +32,7 @@ if not directory_str_has_slash:
     directory += "/"
 rm_string = "rm"
 for i in files_to_rm:
-    rm_string += " " + directory + i
+    rm_string += " '" + directory + i + "'"
 
 print("You can run the following command to delete all the files:")
 print(rm_string)
