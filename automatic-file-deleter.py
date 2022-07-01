@@ -27,6 +27,8 @@ for file in relevant_files:
     if not fitting_file_exists:
         files_to_rm.append(file)
 
+files_to_rm.sort()
+
 directory_str_has_slash = directory[-1] == "/"
 if not directory_str_has_slash:
     directory += "/"
@@ -36,4 +38,6 @@ for i in files_to_rm:
 
 print("You can run the following command to delete all the files:")
 print(rm_string)
+with open("rm.sh", 'w') as f:
+    f.write(rm_string)
 print("This will delete the following files: " + str(files_to_rm))
